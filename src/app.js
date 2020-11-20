@@ -1,6 +1,8 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
+require('dotenv').config()
+
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
@@ -66,12 +68,6 @@ app.get('/weather', (req,res) => {
             })
         })
     })
-
-    // res.send({
-    //     forecast: 'It is snowing',
-    //     location: 'Palanpur',
-    //     address: req.query.address
-    // })
 })
 
 app.get('/products', (req,res) => {
